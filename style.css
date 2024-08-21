@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+}
+
+.flex-container
+{
+    display: flex;
+    background-color: DodgerBlue;
+    flex-direction: column;
+}
+
+
+.flex-container > div
+{
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    flex-grow: 3;
+}
+
+.nav-flex
+{
+    display: flex;
+    background-color: DodgerBlue;
+}
+
+
+.nav-flex > div
+{
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    flex-grow: 3;
+}
+
+.flex-menu
+{
+    display: flex;
+    background-color: #4bb63b;
+}
+
+.flex-menu > div
+{
+    background-color: rgba(227, 9, 54, 0.2);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    flex-grow: 3;
+    text-align: center;
+}
+
+.flex-logo
+{
+    display: flex;
+    background-color: #4bb63b;
+}
+
+.flex-logo > div
+{
+    background-color: rgba(227, 9, 54, 0.2);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    flex-grow: 3;
+    text-align: center;
+}
+
+
+.flex-login
+{
+    display: flex;
+    background-color: #4bb63b;
+}
+
+.flex-login > div
+{
+    background-color: rgba(227, 9, 54, 0.2);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    flex-grow: 3;
+    text-align: center;
+}
+
+.flex-image
+{
+    display: flex;
+    background-color: #4bb63b;
+    justify-content: space-around; /* Distributes space evenly around items */
+    align-items: center; /* Centers items vertically */
+    padding: 20px;
+}
+
+.flex-item {
+    flex: 1; /* Allows flex items to grow/shrink equally */
+    margin: 10px;
+}
+
+.flex-item img {
+    max-width: 100%; /* Ensures the image scales within its container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners to the image */
+}
+
+
+.flex-images
+{
+    display: flex;
+    background-color: #4bb63b;
+}
+
+.flex-images > div
+{
+    background-color: rgb(255, 122, 122);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    flex-grow: 3;
+    text-align: center;
+}
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.grid-item img {
+    max-width: 100%; /* Ensures the image scales within its container */
+    height: auto; /* Maintains aspect ratio */
+}
