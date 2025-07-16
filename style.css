@@ -45,7 +45,11 @@ input, button, textarea, select {
 
 
 
-.hero {
+
+
+
+
+.background {
   background-image: url('/assets/images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,3 +60,47 @@ input, button, textarea, select {
   align-items: center;
   justify-content: center;
 }
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #18141c;
+}
+
+.inner-flex {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  position: relative;
+  color: white;
+  padding: 15px;
+}
+
+nav a:hover {
+  color: rgba(0, 140, 255, 0.692);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0;
+  height: 2px;
+  background-color: rgba(0, 140, 255, 0.692);
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+  
