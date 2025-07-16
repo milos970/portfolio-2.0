@@ -1,0 +1,58 @@
+/* 1. Všetko má border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Odstráni margin na začiatku (napr. body, h1...) */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+  margin: 0;
+}
+
+/* 3. Odstráni padding z listov (ul/ol) */
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* 4. Nastaví základný font a vycentruje renderovanie */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  color: #111;
+}
+
+/* 5. Uľahčí prácu s obrázkami a videami */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Odkazy bez podčiarknutia (voliteľné) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 7. Vstupy, tlačidlá: dedenie fontu */
+input, button, textarea, select {
+  font: inherit;
+}
+
+
+
+.hero {
+  background-image: url('/assets/images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 600px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
