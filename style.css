@@ -21,8 +21,7 @@ body {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: #fff;
-  color: #111;
+  background-color: #141414;
 }
 
 /* 5. Uľahčí prácu s obrázkami a videami */
@@ -50,16 +49,23 @@ input, button, textarea, select {
 
 
 .background {
-  background-image: url('/assets/images/background.jpg');
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(20, 20, 20, 1) 100%),
+    url('/assets/images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 600px;
+
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 50px;
+  
 }
+
+
 
 
 nav {
@@ -89,18 +95,33 @@ nav a:hover {
   color: rgba(0, 140, 255, 0.692);
 }
 
+
 nav a::after {
   content: '';
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: 5px;
   width: 0;
   height: 2px;
   background-color: rgba(0, 140, 255, 0.692);
-  transition: width 0.3s ease-in-out;
+  transition: width 0.5s ease-in-out;
+  transform: translateX(-50%);
 }
 
 nav a:hover::after {
   width: 100%;
+}
+
+nav .selector {
+  padding: 15px;
+  
+}
+
+nav .selector select {
+  background-color: #302c34;
+  color: white;
+   border: 1px solid white;
+   border-radius: 4px;
+   padding-right: 2em;
 }
   
