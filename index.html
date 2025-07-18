@@ -1,32 +1,100 @@
 <!DOCTYPE html>
 <html lang="sk">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Moja stránka</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Moja stránka</title>
 </head>
+
 <body>
-<nav>
+  <nav>
     <a href="/home">LOGO</a>
-  <div class="inner-flex">
-    <a href="/home">GAMES</a>
-    <a href="/home">STUDIOS</a>
-    <a href="/home">NEWS</a>
-    <a href="/home">COMMUNITY</a>
-  </div>
-  <div class="selector">
-    <select name="Language" id="cars">
-      <option value="slovak">Slovak</option>
-      <option value="english">English</option>
-    </select>
-  </div>
-  
-</nav>
+    <div class="inner-flex">
+      <a href="/home">PROJECTS</a>
+      <a href="/home">STUDIOS</a>
+      <a href="/home">NEWS</a>
+      <a href="/home">COMMUNITY</a>
+    </div>
+    <div class="selector">
+      <select name="Language" id="cars">
+        <option value="slovak">Slovak</option>
+        <option value="english">English</option>
+      </select>
+    </div>
+
+  </nav>
 
 
-<div class="background">Welcome</div>
+  <div class="background">My projects</div>
+
+
+  <section class="projects-section">
+
+    <div class="header">
+
+      <h2>My Projects</h2>
+
+      <div class="filters">
+        <div class="selector">
+          <select name="category" aria-label="Select category">
+            <option value="" disabled selected>Categories</option>
+            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
+            <option value="strategy">Strategy</option>
+          </select>
+        </div>
+
+        <div class="selector">
+          <select name="theme" aria-label="Select theme">
+            <option value="" disabled selected>Themes</option>
+            <option value="dark">Dark</option>
+            <option value="soft">Soft</option>
+          </select>
+        </div>
+
+        <div class="selector">
+          <select name="platform" aria-label="Select platform">
+            <option value="" disabled selected>Platforms</option>
+            <option value="ps4">PS4</option>
+            <option value="pc">PC</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="projects">
+
+
+      <img src="./assets/images/background.jpg" alt="Image 1" />
+
+
+
+      <img src="./assets/images/background.jpg" alt="Image 1" />
+
+
+
+      <img src="./assets/images/background.jpg" alt="Image 1" />
+
+
+
+      <img src="./assets/images/background.jpg" alt="Image 1" />
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
 
 
 </body>
+
 </html>

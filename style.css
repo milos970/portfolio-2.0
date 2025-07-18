@@ -6,12 +6,24 @@
 }
 
 /* 2. Odstráni margin na začiatku (napr. body, h1...) */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote {
   margin: 0;
 }
 
 /* 3. Odstráni padding z listov (ul/ol) */
-ul, ol {
+ul,
+ol {
   padding: 0;
   list-style: none;
 }
@@ -25,7 +37,11 @@ body {
 }
 
 /* 5. Uľahčí prácu s obrázkami a videami */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
@@ -38,7 +54,10 @@ a {
 }
 
 /* 7. Vstupy, tlačidlá: dedenie fontu */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -49,9 +68,9 @@ input, button, textarea, select {
 
 
 .background {
-  background-image: 
+  background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(20, 20, 20, 1) 100%),
-    url('/assets/images/background.jpg');
+    url('/assets/images/image.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -62,9 +81,8 @@ input, button, textarea, select {
   align-items: center;
   justify-content: center;
   font-size: 50px;
-  
-}
 
+}
 
 
 
@@ -79,7 +97,7 @@ nav {
   background-color: #18141c;
 }
 
-.inner-flex {
+nav .inner-flex {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -114,14 +132,66 @@ nav a:hover::after {
 
 nav .selector {
   padding: 15px;
-  
+
 }
 
 nav .selector select {
   background-color: #302c34;
   color: white;
-   border: 1px solid white;
-   border-radius: 4px;
-   padding-right: 2em;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding-right: 2em;
 }
-  
+
+
+
+
+.projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+
+.header h2 {
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.filters select {
+  padding: 0.5rem 1rem;
+  background: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.projects img {
+  border-radius: 1rem;
+  object-fit: cover;
+  height: 23.4375rem;
+width: 37.3125rem;
+}
+
