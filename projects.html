@@ -27,7 +27,7 @@
   </nav>
 
 
-  <div class="background">Moje projekty</div>
+  <div class="background">Projekty</div>
 
 
   <section class="projects-section">
@@ -38,28 +38,34 @@
 
       <div class="filters">
         <div class="selector">
-          <select name="category" aria-label="Select category">
+          <select id="category-select" name="category" aria-label="Select category">
             <option value="" disabled selected>Kategórie</option>
-            <option value="action">Hra</option>
-            <option value="adventure">Náučná</option>
-            <option value="strategy">Strategy</option>
+            <option value="category">Všetky kategórie</option>
+            <option value="game">Hra</option>
+            <option value="educational">Náučná</option>
           </select>
         </div>
 
         <div class="selector">
-          <select name="theme" aria-label="Select theme">
-            <option value="" disabled selected>Themes</option>
-            <option value="dark">Dark</option>
-            <option value="soft">Soft</option>
+          <select id="type-select" name="theme" aria-label="Select theme">
+            <option value="" disabled selected>Typy</option>
+            <option value="type">Všetky typy</option>
+            <option value="desktop">Desktop</option>
+             <option value="cli">CLI</option>
+            <option value="web">Web</option>
           </select>
         </div>
 
         <div class="selector">
-          <select name="platform" aria-label="Select platform">
+          <select id="language-select" name="platform" aria-label="Select platform">
             <option value="" disabled selected>Jazyky</option>
-            <option value="ps4">Java</option>
-            <option value="pc">C++</option>
-            <option value="pc">Bash</option>
+            <option value="language">Všetky jazyky</option>
+            <option value="java">Java</option>
+            <option value="cpp">C++</option>
+            <option value="bash">Bash</option>
+            <option value="js">JavaScript</option>
+            <option value="css">CSS</option>
+            <option value="html">HTML</option>
           </select>
         </div>
       </div>
@@ -69,40 +75,40 @@
 
     <div class="projects">
 
-      <div class="project">
+      <div class="project language type category java game desktop">
         <div class="descriptions">
-          <h3>Hangman</h3>
+          <h3>Dice</h3>
           <p>Klasický hra obesenca implementovaná v GUI.</p>
-          <a>Discover it here</a>
+         <a href="#" onclick="setUp('dice')">Discover it here</a>
         </div>
-        <img src="./assets/images/dice.png" alt="Image 1" />
+        <img src="./assets/images/projects/dice/title.png" alt="Image 1" />
       </div>
       
-     <div class="project">
+     <div class="project language type category java game desktop">
         <div class="descriptions">
           <h3>Hangman</h3>
           <p>Klasický hra obesenca implementovaná v GUI.</p>
-          <a>Discover it here</a>
+          <a href="#" onclick="setUp('hangman')">Discover it here</a>
         </div>
-        <img src="./assets/images/hangman.png" alt="Image 1" />
+        <img src="./assets/images/projects/hangman/title.png" alt="Image 1" />
       </div>
 
-      <div class="project">
+      <div class="project language type category java css html js educational web">
         <div class="descriptions">
-          <h3>Hangman</h3>
+          <h3>Educational Software</h3>
           <p>Klasický hra obesenca implementovaná v GUI.</p>
-          <a>Discover it here</a>
+          <a href="#" onclick="setUp('es')">Discover it here</a>
         </div>
-        <img src="./assets/images/swan.png" alt="Image 1" />
+         <img src="./assets/images/projects/es/title.png" alt="Image 1" />
       </div>
 
-      <div class="project">
+      <div class="project language type category java game desktop">
         <div class="descriptions">
-          <h3>Hangman</h3>
+          <h3>Life Is Weird</h3>
           <p>Klasický hra obesenca implementovaná v GUI.</p>
-          <a>Discover it here</a>
+          <a href="#" onclick="setUp('liw')">Discover it here</a>
         </div>
-        <img src="./assets/images/liw.png" alt="Image 1" />
+         <img src="./assets/images/projects/liw/title.png" alt="Image 1" />
       </div>
 
     </div>
@@ -120,7 +126,7 @@
 
 
 
-
+<script src="./action.js"></script>
 </body>
 
 </html>

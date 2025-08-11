@@ -278,12 +278,12 @@ footer {
 /*Game page*/
 
 
-.background-game {
+.title-image {
   position: relative;
   width: 100%;
 }
 
-.background-game h1 {
+.title-image h1 {
   color: white;
   font-size: 100px;
   position: absolute;
@@ -298,14 +298,14 @@ footer {
   object-fit: cover;
 }
 
-.background-game {
+.title-image {
   width: 100%;
  background-color: #141414;
   position: relative;
   height: 80vh;
 }
 
-.background-game img {
+.title-image img {
   position: absolute;
     top: 50%;
   left: 50%;
@@ -316,7 +316,7 @@ footer {
 }
 
 
-.background-game::after {
+.title-image::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -333,34 +333,53 @@ footer {
 
 
 
-
-.game-info
+.project-description 
 {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: #141414;
-}
-
-.game-info .game-text
-{
   color: white;
-  font-size: larger;
-}
-
-
-.game-info .game-text p
-{
-  margin-top: 20px;
+  justify-content: space-around;
+  
 }
 
 
 
+/*    project-card   */
 
-.game-info .sources img {
-  width: 100px;
-  height: 100px;
+.project-section {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: stretch;
+  gap: 50px;
+  margin-top: 100px;
 }
+
+
+.project-section .item{
+  border-radius: 8px;
+  flex: 1;            
+  max-width: 500px;
+  
+}
+
+.project-section .item img{
+  border-radius: 8px;
+  width: 100%;      
+  height: auto; 
+}
+
+.project-section .item {
+  border-radius: 8px;
+  width: 100%;      
+  height: auto; 
+}
+
+
+
+
+
+/*             */
+
 
 
 
@@ -395,9 +414,7 @@ footer {
 
 
 
-/*
-Slideshow
-*/
+/* Slideshow */
 
 
 /* Slideshow container */
@@ -405,6 +422,7 @@ Slideshow
   max-width: 1000px;
   position: relative;
   margin: auto;
+  margin-top: 100px;
 }
 
 /* Hide the images by default */
@@ -489,4 +507,59 @@ Slideshow
 
 .slideshow-container-section {
   margin-top: 50px;
+}
+
+/*      */
+
+
+
+
+
+/* GitHub logo */
+
+
+
+
+.flex-container-logo
+{
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.flex-container-logo .logo-item
+{
+  width: 150px;
+  height: 150px;
+  
+}
+
+h4 {
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+  margin-top: 100px;
+}
+
+
+
+.arrow-down {
+  font-size: 8rem;
+  animation: arrowMove 1s infinite;
+  text-align: center;
+  color: white;
+}
+
+@keyframes arrowMove {
+  0%   { transform: translateY(-10px); opacity: 0; }
+  50%  { transform: translateY(0);     opacity: 1; }
+  100% { transform: translateY(10px);  opacity: 0; }
+}
+
+/*      */
+
+
+footer {
+  margin-top: 100px;
 }

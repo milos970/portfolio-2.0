@@ -4,18 +4,15 @@ Design is based on DON'T NOD website.
 
 ## 🛠️ Vývojový plán
 
-- [ ] How to structure a page of each project.
 - [ ] How to categorize projects.
 - [ ] Design of my logo.
 - [ ] How to name nav fields.
-- [ ] 
-- [ ] 
-- [ ]
+
 
 ## ✅ TODO
-- [ ] Registrácia používateľa
-- [ ] CRUD pre články
-- [ ] Testy pre UserService
+- [ ] Create a template for each project.
+- [ ] 
+- [ ] 
 
 ## 💡 Nápady
 - Komentáre k článkom
