@@ -201,7 +201,7 @@ nav .selector select {
   border-radius: 1rem;
   height: 23.4375rem;
   width: 37.3125rem;
-   z-index: 0;
+  z-index: 0;
 }
 
 .projects .project .descriptions {
@@ -209,10 +209,12 @@ nav .selector select {
   flex-direction: column;
   color: white;
   position: absolute;
-  bottom: 1rem;  /* vzdialenosť odspodu */
-  left: 1rem;    /* vzdialenosť zľava */
+  bottom: 1rem;
+  /* vzdialenosť odspodu */
+  left: 1rem;
+  /* vzdialenosť zľava */
   text-align: left;
-  
+
   padding: 1rem;
   border-radius: 0.5rem;
   z-index: 2;
@@ -233,7 +235,7 @@ nav .selector select {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  
+
 }
 
 .project:hover::before {
@@ -248,10 +250,13 @@ footer {
 }
 
 .project::before {
-  content: ""; /* Dôležité: bez tohto sa ::before nezobrazí */
+  content: "";
+  /* Dôležité: bez tohto sa ::before nezobrazí */
   position: absolute;
-  inset: 0; /* skratka pre top, right, bottom, left: 0 */
-  background-color: rgba(0, 0, 0, 0); /* začiatok – priehľadné */
+  inset: 0;
+  /* skratka pre top, right, bottom, left: 0 */
+  background-color: rgba(0, 0, 0, 0);
+  /* začiatok – priehľadné */
   transition: background-color 0.4s ease;
   z-index: 1;
   border-radius: 1rem;
@@ -300,14 +305,14 @@ footer {
 
 .title-image {
   width: 100%;
- background-color: #141414;
+  background-color: #141414;
   position: relative;
   height: 80vh;
 }
 
 .title-image img {
   position: absolute;
-    top: 50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 120vh;
@@ -321,11 +326,11 @@ footer {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(20,20,20,1) 100%),
-    linear-gradient(to left, rgba(0,0,0,0) 60%, rgba(20,20,20,1) 100%),
-    linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(20,20,20,1) 100%);
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(20, 20, 20, 1) 100%),
+    linear-gradient(to left, rgba(0, 0, 0, 0) 60%, rgba(20, 20, 20, 1) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0) 60%, rgba(20, 20, 20, 1) 100%);
   pointer-events: none;
-  
+
 }
 
 
@@ -333,12 +338,11 @@ footer {
 
 
 
-.project-description 
-{
+.project-description {
   display: flex;
   color: white;
   justify-content: space-around;
-  
+
 }
 
 
@@ -354,26 +358,59 @@ footer {
   margin-top: 100px;
 }
 
-
-.project-section .item{
+.project-section>.item {
   border-radius: 8px;
-  flex: 1;            
+  flex: 1;
   max-width: 500px;
   
 }
 
-.project-section .item img{
+/* obrázok */
+.project-section .item img {
   border-radius: 8px;
-  width: 100%;      
-  height: auto; 
+  width: 100%;
+  height: auto;
 }
 
-.project-section .item {
-  border-radius: 8px;
-  width: 100%;      
-  height: auto; 
+.project-section .item.item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.project-section .item img.enlarged {
+    transform: scale(1.5); /* zväčšenie 1.5x */
+    z-index: 10;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.project-section .item img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* pridáme pre plynulé zväčšenie */
+    cursor: pointer;
+}
+
+
+
+.project-section .item.item-text h5 {
+  color: #5bc0de;
+  /* svetlomodrý / tyrkysový */
+  font-size: 1.25rem;
+  /* môžeš upraviť veľkosť */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.project-section .item.item-text p {
+  color: #e0e0e0;
+  /* svetlosivá / biela */
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
 
 
@@ -385,15 +422,15 @@ footer {
 
 .game-screens {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: auto auto; 
-  gap: 20px; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
   max-width: 1200px;
   margin-top: 100px;
 }
 
 .game-screens .item {
-  
+
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -407,7 +444,7 @@ footer {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  
+
 }
 
 
@@ -435,7 +472,8 @@ footer {
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -457,8 +495,9 @@ footer {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -493,7 +532,8 @@ footer {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -504,8 +544,13 @@ footer {
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 
@@ -524,19 +569,17 @@ footer {
 
 
 
-.flex-container-logo
-{
+.flex-container-logo {
   display: flex;
   justify-content: center;
 
   width: 100%;
 }
 
-.flex-container-logo .logo-item
-{
+.flex-container-logo .logo-item {
   width: 150px;
   height: 150px;
-  
+
 }
 
 h4 {
@@ -556,9 +599,20 @@ h4 {
 }
 
 @keyframes arrowMove {
-  0%   { transform: translateY(-10px); opacity: 0; }
-  50%  { transform: translateY(0);     opacity: 1; }
-  100% { transform: translateY(10px);  opacity: 0; }
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
 }
 
 /*      */
