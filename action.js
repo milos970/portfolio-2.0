@@ -4,9 +4,9 @@
 const images = document.querySelectorAll('.project-section .item img');
 
 images.forEach(img => {
-    img.addEventListener('click', () => {
-        img.classList.toggle('enlarged');
-    });
+  img.addEventListener('click', () => {
+    img.classList.toggle('enlarged');
+  });
 });
 
 
@@ -77,65 +77,72 @@ function setUp(projectName) {
 let left = true;
 
 function projects(projectName) {
-const projects = new Map([
-  ["LIW", [
-    { img: "./assets/images/projects/liw/title.png", title: "Life Is Weird", desc: "Jednoduchá príbehová GUI aplikácia voľne inšpirovaná zážitkami z AAA hier Firewatch a Life Is Strange." },
-    { img: "./assets/images/projects/liw/1.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/liw/2.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/liw/3.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/liw/4.png", title: "Nadpis", desc: "Popis" },
-     { img: "./assets/images/projects/liw/5.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/liw/6.png", title: "Nadpis", desc: "Popis" }
-  ]],
-  ["EDU", [
-    { img: "./assets/images/projects/es/title.png", title: "Educational Software", desc: "Učebná pomôcka pre študentov predmetu Numerické metódy." },
-    { img: "./assets/images/projects/es/1.png", title: "Prihlasovací formulár", desc: "Možnosť prihlásenia majú len študenti predmenu Numerické metódy a zamestnanci fakulty."},
-    { img: "./assets/images/projects/es/2.png", title: "Registračný formulár", desc: "Možnosť registrácie majú len študenti daného predmetu a a zamestnanci fakulty. Implementácia validácii je riešena vlastnou logikou prostredníctvom vanilla JS. Bol použitý dynamicky sa meniaci validačný mechanizmus." },
-    { img: "./assets/images/projects/es/3.png", title: "Zabudnuté heslo", desc: "Popis"},
-    { img: "./assets/images/projects/es/4.png", title: "Hlavné menu", desc: "Zoznam numerických kategorii. Každá kategória obsahuje zoznam vybranych numerických metód na spracovanie."},
-    { img: "./assets/images/projects/es/5.png", title: "Materiály", desc: ""},
-    { img: "./assets/images/projects/es/6.png", title: "Komunikácia", desc: "Jednoduchý komunikačný kanál s vyučujúcim predmetu. Vyučujúci si môže vybrať so zoznamu študenta s ktorým bude prebiehať komunikácia. Študent má možnosť komunikovať len výlučne s vyučujúcim."},
-    { img: "./assets/images/projects/es/7.png", title: "Profil", desc: "Popis"},
-    { img: "./assets/images/projects/es/8.png", title: "System", desc: ""},
-    { img: "./assets/images/projects/es/9.png", title: "System", desc: "Zoznam funkcionalít, ktorým vyučujúci spravuje daný predmet. Cez toto registruje žiakov, nastavuje max počet absencii, bodov."},
-    { img: "./assets/images/projects/es/10.png", title: "Materiály", desc: "Zoznam materialov nahraných vyučujúcim predmetu. Študent si je schopný stiahnuť vybraný materiál. Vyučujúci je schopný nahrávať a odstraňovať súbory."},
-    { img: "./assets/images/projects/es/11.png", title: "Študenti", desc: "Zoznam zaregistrovaných študentov. Možnosť pridelovania dosiahnutých bodov a prípadných absencii."},
-    { img: "./assets/images/projects/es/12.png", title: "Zamestnanci", desc: "Zoznam zaregistrovaných zamestnancov. Slúži na prehľad a v prípade potreby aj dohľadania používateľského mena pre prípadnú zmenu vyučujúceho."},
-    { img: "./assets/images/projects/es/13.png", title: "Komunikácia", desc: "Jednoduchý komunikačný kanál s vyučujúcim predmetu. Vyučujúci si môže vybrať so zoznamu študenta s ktorým bude prebiehať komunikácia. Študent má možnosť komunikovať len výlučne s vyučujúcim."}
-  ]],
-  ["HAN", [
-    { img: "./assets/images/projects/hangman/title.png", title: "Hangman", desc: "Popis" },
-    { img: "./assets/images/projects/hangman/1.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/hangman/2.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/hangman/3.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/hangman/4.png", title: "Nadpis", desc: "Popis" }
-  ]],
-  ["DIC", [
-    { img: "./assets/images/projects/dice/title.png", title: "Dice", desc: "Popis" },
-    { img: "./assets/images/projects/dice/1.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/dice/2.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/dice/3.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/dice/4.png", title: "Nadpis", desc: "Popis" }
-  ]],
-  ["SPR", [
-    { img: "./assets/images/projects/spr/title.png", title: "Swan Protocol", desc: "Popis" },
-    { img: "./assets/images/projects/spr/1.png", title: "Nadpis", desc: "Možnosť zvolenia si " },
-    { img: "./assets/images/projects/spr/2.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/spr/3.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/spr/4.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/spr/5.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/spr/6.png", title: "Nadpis", desc: "Popis" },
-    { img: "./assets/images/projects/spr/7.png", title: "Nadpis", desc: "Popis" }
-  ]]
-]);
+  const projects = new Map([
+    ["LIW", [
+      { img: "./assets/images/projects/liw/title.png", title: "Life Is Weird", desc: "Jednoduchá príbehová GUI aplikácia voľne inšpirovaná zážitkami z AAA hier Firewatch a Life Is Strange." },
+      { img: "./assets/images/projects/liw/1.png", title: "Príbehová zložka", desc: "Interaktívna časť inšpirovaná pasážou z hry Firewatch." },
+      { img: "./assets/images/projects/liw/2.png", title: "Animácie", desc: "Použité animácie vyplňujúce priebeh hry." },
+      { img: "./assets/images/projects/liw/3.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/liw/4.png", title: "Súbor minihier - pexeso", desc: "Začína časový odpočet na dohranie každej jednej minihy. Začiatok sa viaže na pexeso." },
+      { img: "./assets/images/projects/liw/6.png", title: "Súbor minihier - sokoban", desc: "Odpočet stále plynie." },
+      { img: "./assets/images/projects/liw/5.png", title: "Súbor minihier - quiz", desc: "Završenie je klasickým kvízom." }
+    ]],
+    ["EDU", [
+      { img: "./assets/images/projects/es/title.png", title: "Educational Software", desc: "Wébová aplikácia určená ako podpora výučby predmetu Numerické metódy." },
+      { img: "./assets/images/projects/es/1.png", title: "Prihlasovací formulár", desc: "Prihlásiť sa môžu len registrovaní študenti predmetu Numerické metódy a zamestnanci fakulty." },
+      { img: "./assets/images/projects/es/2.png", title: "Registračný formulár", desc: "Registrácia je umožnená výhradne študentom predmetu Numerické metódy a zamestnancom fakulty." },
+      { img: "./assets/images/projects/es/3.png", title: "Zabudnuté heslo", desc: "Obnovenie hesla prostredníctvom fakultného e-mailu." },
+      { img: "./assets/images/projects/es/4.png", title: "Hlavné menu", desc: "Základný layout aplikácie. Obsah ľavého menu sa mení podľa role prihláseného používateľa." },
+      { img: "./assets/images/projects/es/4.1.png", title: "Výber kategórií", desc: "Každá kategória obsahuje zoznam numerických metód, ktoré riešia danú oblasť." },
+      { img: "./assets/images/projects/es/5.png", title: "Newtonova metóda – výpis", desc: "Zobrazenie iterácií a výsledku riešenia rovnice danou metódou." },
+      { img: "./assets/images/projects/es/6.png", title: "Newtonova metóda – graf", desc: "Graf funkcie na vizualizáciu počiatočnej aproximácie riešenia." },
+      { img: "./assets/images/projects/es/7.png", title: "Lichobežníková metóda", desc: "Výpočet integrálu so zobrazením grafu plochy ohraničenej funkciou a osou x na danom intervale." },
+      { img: "./assets/images/projects/es/8.png", title: "Metóda najmenších štvorcov", desc: "Grafický a textový výstup aproximácie funkcie podľa zadaných uzlov. Pri väčšom počte uzlov je možné nahrať CSV súbor." },
+      { img: "./assets/images/projects/es/9.png", title: "Systém", desc: "Sekcia nastavení predmetu umožňuje vyučujúcemu konfigurovať základné parametre (absencie, študenti, vyučujúci, termíny). Pravý panel poskytuje okamžitý prehľad o aktuálne zadaných hodnotách." },
+      { img: "./assets/images/projects/es/10.png", title: "Materiály", desc: "Zoznam nahraných študijných materiálov. Študenti si ich môžu stiahnuť, vyučujúci pridávať alebo odstraňovať." },
+      { img: "./assets/images/projects/es/11.png", title: "Študenti", desc: "Prehľad zaregistrovaných študentov s možnosťou prideľovania bodov." },
+      { img: "./assets/images/projects/es/12.png", title: "Zamestnanci", desc: "Zoznam registrovaných zamestnancov fakulty s možnosťou vyhľadania používateľského mena. Je možné vybraného používateľa odstrániť." },
+      { img: "./assets/images/projects/es/13.png", title: "Komunikácia", desc: "Jednoduchý komunikačný kanál medzi vyučujúcim a študentom. Študent môže komunikovať výlučne s vyučujúcim." },
+
+      { img: "./assets/images/projects/es/sign-up.gif", title: "", desc: "" },
+      { img: "./assets/images/projects/es/method.gif", title: "", desc: "" },
+      { img: "./assets/images/projects/es/method-new.gif", title: "", desc: "" },
+      { img: "./assets/images/projects/es/chat.gif", title: "", desc: "" }
+    ]],
+    ["HAN", [
+      { img: "./assets/images/projects/hangman/title.png", title: "Hangman", desc: "Popis" },
+      { img: "./assets/images/projects/hangman/1.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/hangman/2.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/hangman/3.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/hangman/4.png", title: "Nadpis", desc: "Popis" }
+    ]],
+    ["DIC", [
+      { img: "./assets/images/projects/dice/title.png", title: "Dice", desc: "Jednoduchý štatistický experiment v hádzaní kockami" },
+      { img: "./assets/images/projects/dice/1.png", title: "Inicializácia experimentu", desc: "Možnosť zvolenia si požadovaného počtu kociek a ich hľadaný súčet." },
+      { img: "./assets/images/projects/dice/2.png", title: "Nastavenie rýchlosti priebehu", desc: "V prípade dlhšieho trvania experimentu je možné zvýšiť rýchlosť." },
+      { img: "./assets/images/projects/dice/3.png", title: "Histogram", desc: "Demonštruje početnosť jednotlivých hodov zadaných súčtov" },
+      { img: "./assets/images/projects/dice/4.png", title: "Animácia hodu kociek", desc: "Reprezentuje jednotlivé hody. Rýchlosť animácie je ovplyvnená rýchlosti nastavenia experimentu." },
+      { img: "./assets/images/projects/dice/demo.gif", title: "", desc: "" }
+    ]],
+    ["SPR", [
+      { img: "./assets/images/projects/spr/title.png", title: "Swan Protocol", desc: "Popis" },
+      { img: "./assets/images/projects/spr/1.png", title: "Nadpis", desc: "Možnosť zvolenia si " },
+      { img: "./assets/images/projects/spr/2.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/spr/3.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/spr/4.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/spr/5.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/spr/6.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/spr/7.png", title: "Nadpis", desc: "Popis" }
+    ]]
+  ]);
 
 
 
-const project = projects.get(projectName);
+  const project = projects.get(projectName);
 
-project.forEach(sub => {
-  createProject(sub.title, sub.desc, sub.img);
-});
+  project.forEach(sub => {
+    createProject(sub.title, sub.desc, sub.img);
+  });
 
 }
 
@@ -167,13 +174,18 @@ function createProject(title, description, imageUrl) {
     itemHeader.appendChild(p);
 
 
-     const itemHeader2 = document.createElement("div");
+    const itemHeader2 = document.createElement("div");
     itemHeader2.className = "item";
 
     project.appendChild(itemHeader);
-project.appendChild(itemHeader2);
+    project.appendChild(itemHeader2);
     document.getElementById("project-description-section").appendChild(project);
-  
+
+    return;
+  }
+
+  if (title === "" && description === "") {
+    addSlide(imageUrl);
     return;
   }
 
@@ -213,14 +225,89 @@ project.appendChild(itemHeader2);
   section.appendChild(left ? itemImg : itemText);
   section.appendChild(left ? itemText : itemImg);
 
-  
+
 
   document.getElementById("project-description-section").appendChild(section);
 
   left = left ? false : true;
+
+}
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  if (slides.length) {
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
 }
 
 
 
 
 
+function addSlide(src) {
+  const container = document.querySelector(".slideshow-container");
+  const dotsContainer = document.getElementById("dots-container");
+
+  // index nového slide-u
+  const newIndex = dotsContainer.childElementCount + 1;
+
+  // vytvoríme nový slide
+  const slide = document.createElement("div");
+  slide.className = "mySlides fade";
+
+  const img = document.createElement("img");
+  img.src = src;
+  img.style.width = "100%";
+
+  slide.appendChild(img);
+
+  // vložíme slide pred tlačidlá prev/next
+  const prevBtn = container.querySelector(".prev");
+  container.insertBefore(slide, prevBtn);
+
+  // vytvoríme nový dot
+  const dot = document.createElement("span");
+  dot.className = "dot";
+  dot.setAttribute("onclick", `currentSlide(${newIndex})`);
+  dotsContainer.appendChild(dot);
+}
+
+
+window.onload = () => currentSlide(1);
+
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.nav-dropdown');
+
+hamburger.addEventListener('click', () => {
+  // Získa aktuálnu hodnotu display cez computed style
+  const currentDisplay = window.getComputedStyle(nav).display;
+
+  if (currentDisplay === 'none') {
+    nav.style.display = 'flex';  // zobrazíme menu
+  } else {
+    nav.style.display = 'none';  // skryjeme menu
+  }
+});

@@ -70,7 +70,7 @@ select {
 .background {
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(20, 20, 20, 1) 100%),
-    url('/assets/images/image.png');
+    url('/assets/images/arnold-francisca-FBNxmwEVpAc-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -84,7 +84,7 @@ select {
 
 }
 
-
+/*************************NAVBAR**********************************/
 
 nav {
   position: fixed;
@@ -104,18 +104,18 @@ nav .inner-flex {
   gap: 10px;
 }
 
-nav a {
+.nav-link {
   position: relative;
   color: white;
   padding: 15px;
 }
 
-nav a:hover {
+.nav-link:hover {
   color: rgba(0, 140, 255, 0.692);
 }
 
 
-nav a::after {
+.nav-link::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -127,16 +127,15 @@ nav a::after {
   transform: translateX(-50%);
 }
 
-nav a:hover::after {
+.nav-link:hover::after {
   width: 100%;
 }
 
-nav .selector {
+.language-selector  {
   padding: 15px;
-
 }
 
-nav .selector select {
+.language-selector select {
   background-color: #302c34;
   color: white;
   border: 1px solid white;
@@ -144,7 +143,60 @@ nav .selector select {
   padding-right: 2em;
 }
 
+/* defaultne skryté */
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
 
+/* len na mobiloch */
+@media only screen and (max-width: 670px) {
+  .hamburger {
+    display: block;
+  }
+
+   nav .inner-flex {
+    visibility: hidden;
+  } 
+
+  nav .language-selector {
+    display: none;
+  }
+
+}
+
+
+.nav-dropdown {
+  position: fixed;
+  z-index: 1000;
+  top: 52px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  display: none;
+  align-items: center;
+  background-color: #18141c;
+  gap: 10px;
+  }
+
+
+  .nav-dropdown a {
+  position: relative;
+  color: white;
+  padding: 15px;
+}
+
+  
+
+
+
+
+/*******************************************************************/
 
 
 .projects-section {
@@ -189,35 +241,33 @@ nav .selector select {
   gap: 2rem;
 }
 
-.project {
-  position: relative;
+.projects .project {
+  aspect-ratio: 16 / 9; /* nastav pomer strán podľa obrázkov */
   overflow: hidden;
+  border-radius: 1rem;
+  background-color: #302c34; /* len pre vizuálnu kontrolu */
 }
-
-
 
 .projects .project img {
-  object-fit: cover;
-  border-radius: 1rem;
-  height: 23.4375rem;
-  width: 37.3125rem;
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* vyplní celú kartu bez deformácie */
+  display: block;
 }
 
-.projects .project .descriptions {
-  display: flex;
-  flex-direction: column;
-  color: white;
+.project .descriptions {
   position: absolute;
-  bottom: 1rem;
-  /* vzdialenosť odspodu */
-  left: 1rem;
-  /* vzdialenosť zľava */
-  text-align: left;
-
+  top: 60%;
+  left: 0%;
+  color: white;
   padding: 1rem;
   border-radius: 0.5rem;
-  z-index: 2;
+}
+
+
+.project {
+    position: relative;
+  display: inline-block;
 }
 
 /* Skryť p a a na začiatku */
@@ -240,6 +290,7 @@ nav .selector select {
 
 .project:hover::before {
   background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 
@@ -267,17 +318,11 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr; /* všetko pod seba */
+  }
+}
 
 
 /*Game page*/
@@ -618,6 +663,29 @@ h4 {
 /*      */
 
 
+
 footer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  gap: 20px;              
+  padding: 40px 0;
   margin-top: 100px;
 }
+
+footer img,
+.flex-container-logo img {
+  transition: transform 0.2s ease;
+}
+
+footer img:hover,
+.flex-container-logo img:hover {
+  transform: scale(1.1);
+}
+
+footer img {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.2s ease;
+}
+
