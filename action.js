@@ -114,7 +114,8 @@ function projects(projectName) {
       { img: "./assets/images/projects/hangman/1.png", title: "Nadpis", desc: "Popis" },
       { img: "./assets/images/projects/hangman/2.png", title: "Nadpis", desc: "Popis" },
       { img: "./assets/images/projects/hangman/3.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/hangman/4.png", title: "Nadpis", desc: "Popis" }
+      { img: "./assets/images/projects/hangman/4.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/hangman/5.png", title: "Nadpis", desc: "Popis" },
     ]],
     ["DIC", [
       { img: "./assets/images/projects/dice/title.png", title: "Dice", desc: "Jednoduchý štatistický experiment v hádzaní kockami" },

@@ -34,6 +34,27 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-color: #141414;
+
+  
+}
+
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #141414;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color:  rgba(0, 140, 255, 0.692);
+  border-radius: 6px;
+  cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
 }
 
 /* 5. Uľahčí prácu s obrázkami a videami */
@@ -242,26 +263,28 @@ nav .inner-flex {
 }
 
 .projects .project {
-  aspect-ratio: 16 / 9; /* nastav pomer strán podľa obrázkov */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 1rem;
-  background-color: #302c34; /* len pre vizuálnu kontrolu */
+  background-color: #302c34;
 }
 
 .projects .project img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* vyplní celú kartu bez deformácie */
+  object-fit: cover;
   display: block;
 }
 
-.project .descriptions {
+.project .descriptions 
+{
   position: absolute;
   top: 60%;
   left: 0%;
   color: white;
   padding: 1rem;
   border-radius: 0.5rem;
+   z-index: 2; 
 }
 
 
@@ -270,7 +293,7 @@ nav .inner-flex {
   display: inline-block;
 }
 
-/* Skryť p a a na začiatku */
+
 .projects .project .descriptions p,
 .projects .project .descriptions a {
   opacity: 0;
@@ -279,13 +302,15 @@ nav .inner-flex {
   pointer-events: none;
 }
 
-/* Zobrazia sa pri hovernutí na .project */
 .projects .project:hover .descriptions p,
 .projects .project:hover .descriptions a {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
 
+.projects .descriptions a {
+  color: #1abc9c;
 }
 
 .project:hover::before {
@@ -688,4 +713,7 @@ footer img {
   height: 70px;
   transition: transform 0.2s ease;
 }
+
+
+
 
