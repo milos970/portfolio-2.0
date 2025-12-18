@@ -74,67 +74,133 @@ function setUp(projectName) {
 
 
 
+//*******************************************Language Selector***********************************************************
+
+import { sk } from "./assets/translations/sk.js";
+import { en } from "./assets/translations/en.js";
+
+let currentLang = sk;
+
+const languageSelector = document.getElementById("cars");
+
+languageSelector.addEventListener("change", e => {
+    currentLang = e.target.value === "english" ? en : sk;
+    updatePage(currentLang);
+});
+
+function getText(path, lang) {
+    return path.split(".").reduce((obj, key) => obj?.[key], lang);
+}
+
+function updateStaticTexts(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        const text = getText(key, lang);
+        if (text) el.textContent = text;
+    });
+}
+
+
+function updatePage(lang) {
+    // statické texty (menu, contact, titles...)
+    updateStaticTexts(lang);
+
+    // projekty – len tie, ktoré sú na stránke
+    updateProjectTexts(lang, "LIW");
+    updateProjectTexts(lang, "EDU");
+}
+
+function updateProjectTexts(lang, projectName) {
+    const projectArray = projects(projectName);
+    const langProject = lang.projects?.[projectName];
+
+    if (!projectArray || !langProject) return;
+
+    projectArray.forEach(item => {
+        const text = langProject[item.img];
+        if (text) {
+            item.title = text.title;
+            item.desc = text.desc;
+        }
+    });
+
+    renderProjects(projectArray);
+}
+
+
+
+//*******************************************Language Selector***********************************************************
+
+
 let left = true;
 
 function projects(projectName) {
   const projects = new Map([
     ["LIW", [
-      { img: "./assets/images/projects/liw/title.png", title: "Life Is Weird", desc: "Jednoduchá príbehová GUI aplikácia voľne inšpirovaná zážitkami z AAA hier Firewatch a Life Is Strange." },
-      { img: "./assets/images/projects/liw/1.png", title: "Príbehová zložka", desc: "Interaktívna časť inšpirovaná pasážou z hry Firewatch." },
-      { img: "./assets/images/projects/liw/2.png", title: "Animácie", desc: "Použité animácie vyplňujúce priebeh hry." },
-      { img: "./assets/images/projects/liw/3.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/liw/4.png", title: "Súbor minihier - pexeso", desc: "Začína časový odpočet na dohranie každej jednej minihy. Začiatok sa viaže na pexeso." },
-      { img: "./assets/images/projects/liw/6.png", title: "Súbor minihier - sokoban", desc: "Odpočet stále plynie." },
-      { img: "./assets/images/projects/liw/5.png", title: "Súbor minihier - quiz", desc: "Završenie je klasickým kvízom." }
+      { img: "./assets/images/projects/liw/title.png", title: "", desc: "" },
+      { img: "./assets/images/projects/liw/1.png", title: "", desc: "" },
+      { img: "./assets/images/projects/liw/2.png", title: "", desc: "" },
+      { img: "./assets/images/projects/liw/3.png", title: "", desc: "" },
+      { img: "./assets/images/projects/liw/4.png", title: "", desc: "" },
+      { img: "./assets/images/projects/liw/6.png", title: "", desc: "" },
+      { img: "./assets/images/projects/liw/5.png", title: "", desc: "" }
     ]],
     ["EDU", [
-      { img: "./assets/images/projects/es/title.png", title: "Educational Software", desc: "Wébová aplikácia určená ako podpora výučby predmetu Numerické metódy." },
-      { img: "./assets/images/projects/es/1.png", title: "Prihlasovací formulár", desc: "Prihlásiť sa môžu len registrovaní študenti predmetu Numerické metódy a zamestnanci fakulty." },
-      { img: "./assets/images/projects/es/2.png", title: "Registračný formulár", desc: "Registrácia je umožnená výhradne študentom predmetu Numerické metódy a zamestnancom fakulty." },
-      { img: "./assets/images/projects/es/3.png", title: "Zabudnuté heslo", desc: "Obnovenie hesla prostredníctvom fakultného e-mailu." },
-      { img: "./assets/images/projects/es/4.png", title: "Hlavné menu", desc: "Základný layout aplikácie. Obsah ľavého menu sa mení podľa role prihláseného používateľa." },
-      { img: "./assets/images/projects/es/4.1.png", title: "Výber kategórií", desc: "Každá kategória obsahuje zoznam numerických metód, ktoré riešia danú oblasť." },
-      { img: "./assets/images/projects/es/5.png", title: "Newtonova metóda – výpis", desc: "Zobrazenie iterácií a výsledku riešenia rovnice danou metódou." },
-      { img: "./assets/images/projects/es/6.png", title: "Newtonova metóda – graf", desc: "Graf funkcie na vizualizáciu počiatočnej aproximácie riešenia." },
-      { img: "./assets/images/projects/es/7.png", title: "Lichobežníková metóda", desc: "Výpočet integrálu so zobrazením grafu plochy ohraničenej funkciou a osou x na danom intervale." },
-      { img: "./assets/images/projects/es/8.png", title: "Metóda najmenších štvorcov", desc: "Grafický a textový výstup aproximácie funkcie podľa zadaných uzlov. Pri väčšom počte uzlov je možné nahrať CSV súbor." },
-      { img: "./assets/images/projects/es/9.png", title: "Systém", desc: "Sekcia nastavení predmetu umožňuje vyučujúcemu konfigurovať základné parametre (absencie, študenti, vyučujúci, termíny). Pravý panel poskytuje okamžitý prehľad o aktuálne zadaných hodnotách." },
-      { img: "./assets/images/projects/es/10.png", title: "Materiály", desc: "Zoznam nahraných študijných materiálov. Študenti si ich môžu stiahnuť, vyučujúci pridávať alebo odstraňovať." },
-      { img: "./assets/images/projects/es/11.png", title: "Študenti", desc: "Prehľad zaregistrovaných študentov s možnosťou prideľovania bodov." },
-      { img: "./assets/images/projects/es/12.png", title: "Zamestnanci", desc: "Zoznam registrovaných zamestnancov fakulty s možnosťou vyhľadania používateľského mena. Je možné vybraného používateľa odstrániť." },
-      { img: "./assets/images/projects/es/13.png", title: "Komunikácia", desc: "Jednoduchý komunikačný kanál medzi vyučujúcim a študentom. Študent môže komunikovať výlučne s vyučujúcim." },
-
+      { img: "./assets/images/projects/es/title.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/1.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/2.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/3.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/4.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/4.1.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/5.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/6.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/7.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/8.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/9.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/10.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/11.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/12.png", title: "", desc: "" },
+      { img: "./assets/images/projects/es/13.png", title: "", desc: "" },
       { img: "./assets/images/projects/es/sign-up.gif", title: "", desc: "" },
       { img: "./assets/images/projects/es/method.gif", title: "", desc: "" },
       { img: "./assets/images/projects/es/method-new.gif", title: "", desc: "" },
       { img: "./assets/images/projects/es/chat.gif", title: "", desc: "" }
     ]],
     ["HAN", [
-      { img: "./assets/images/projects/hangman/title.png", title: "Hangman", desc: "Popis" },
-      { img: "./assets/images/projects/hangman/1.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/hangman/2.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/hangman/3.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/hangman/4.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/hangman/5.png", title: "Nadpis", desc: "Popis" },
+      { img: "./assets/images/projects/hangman/title.png", title: "", desc: ""},
+      { img: "./assets/images/projects/hangman/1.png", title: "", desc: ""},
+      { img: "./assets/images/projects/hangman/2.png", title: "", desc: "" },
+      { img: "./assets/images/projects/hangman/3.png", title: "", desc: "" },
+      { img: "./assets/images/projects/hangman/4.png", title: "", desc: "" },
+      { img: "./assets/images/projects/hangman/5.png", title: "", desc: "" },
+      { img: "./assets/images/projects/hangman/demo.gif", title: "", desc: "" },
+      { img: "", title: "", desc: "https://github.com/milos970/hangman.git" }
     ]],
     ["DIC", [
-      { img: "./assets/images/projects/dice/title.png", title: "Dice", desc: "Jednoduchý štatistický experiment v hádzaní kockami" },
-      { img: "./assets/images/projects/dice/1.png", title: "Inicializácia experimentu", desc: "Možnosť zvolenia si požadovaného počtu kociek a ich hľadaný súčet." },
-      { img: "./assets/images/projects/dice/2.png", title: "Nastavenie rýchlosti priebehu", desc: "V prípade dlhšieho trvania experimentu je možné zvýšiť rýchlosť." },
-      { img: "./assets/images/projects/dice/3.png", title: "Histogram", desc: "Demonštruje početnosť jednotlivých hodov zadaných súčtov" },
-      { img: "./assets/images/projects/dice/4.png", title: "Animácia hodu kociek", desc: "Reprezentuje jednotlivé hody. Rýchlosť animácie je ovplyvnená rýchlosti nastavenia experimentu." },
+      { img: "./assets/images/projects/dice/title.png", title: "", desc: "" },
+      { img: "./assets/images/projects/dice/1.png", title: "", desc: "" },
+      { img: "./assets/images/projects/dice/2.png", title: "", desc: "" },
+      { img: "./assets/images/projects/dice/3.png", title: "", desc: "" },
+      { img: "./assets/images/projects/dice/4.png", title: "", desc: "" },
       { img: "./assets/images/projects/dice/demo.gif", title: "", desc: "" }
     ]],
     ["SPR", [
-      { img: "./assets/images/projects/spr/title.png", title: "Swan Protocol", desc: "Popis" },
-      { img: "./assets/images/projects/spr/1.png", title: "Nadpis", desc: "Možnosť zvolenia si " },
-      { img: "./assets/images/projects/spr/2.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/spr/3.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/spr/4.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/spr/5.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/spr/6.png", title: "Nadpis", desc: "Popis" },
-      { img: "./assets/images/projects/spr/7.png", title: "Nadpis", desc: "Popis" }
-    ]]
+      { img: "./assets/images/projects/spr/title.png", title: "", desc: "" },
+      { img: "./assets/images/projects/spr/1.png", title: "", desc: "" },
+      { img: "./assets/images/projects/spr/2.png", title: "", desc: "" },
+      { img: "./assets/images/projects/spr/3.png", title: "", desc: "" },
+      { img: "./assets/images/projects/spr/4.png", title: "", desc: "" },
+      { img: "./assets/images/projects/spr/5.png", title: "", desc: "" },
+      { img: "./assets/images/projects/spr/6.png", title: "", desc: "" },
+      { img: "./assets/images/projects/spr/7.png", title: "", desc: "" }
+    ]],
+      ["PCRio", [
+          { img: "./assets/images/projects/pcr/title.png", title: "", desc: "" },
+          { img: "./assets/images/projects/pcr/1.png", title: "", desc: "" },
+          { img: "./assets/images/projects/pcr/2.png", title: "", desc: "" },
+          { img: "./assets/images/projects/pcr/3.png", title: "", desc: "" },
+          { img: "./assets/images/projects/pcr/4.png", title: "", desc: "" }
+      ]]
   ]);
 
 
@@ -187,6 +253,12 @@ function createProject(title, description, imageUrl) {
 
   if (title === "" && description === "") {
     addSlide(imageUrl);
+    return;
+  }
+
+
+  if (imageUrl === "") {
+    document.querySelector("#project-link").setAttribute("href", description);
     return;
   }
 

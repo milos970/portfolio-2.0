@@ -5,22 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <title>Projekty</title>
+  <title data-i18n="common.title" >Projekty</title>
 </head>
 
 <body>
   <nav>
     <a class="nav-link" href="/home">LOGO</a>
     <div class="inner-flex">
-      <a class="nav-link" href="/home">O MNE</a>
-      <a class="nav-link" href="./projects.html">PROJEKTY</a>
-      <a class="nav-link" href="/home">PRIPRAVOVANÉ</a>
-      <a class="nav-link" href="/home">KONTAKT</a>
+      <a class="nav-link" href="/home" data-i18n="nav.home">O MNE</a>
+      <a class="nav-link" href="./projects.html" data-i18n="nav.projects">PROJEKTY</a>
+      <a class="nav-link" href="/home" data-i18n="nav.upcoming">PRIPRAVOVANÉ</a>
+      <a class="nav-link" href="/home" data-i18n="nav.contact">KONTAKT</a>
     </div>
     <div class="language-selector">
       <select name="Language" id="cars">
         <option value="slovak">Slovak</option>
-        <!-- <option value="english">English</option> -->
+        <option value="english">English</option>
       </select>
     </div>
 
@@ -30,52 +30,52 @@
   </nav>
 
   <div class="nav-dropdown">
-      <a class="nav-link" href="/home">O MNE</a>
-      <a class="nav-link" href="./projects.html">PROJEKTY</a>
-      <a class="nav-link" href="/home">PRIPRAVOVANÉ</a>
-      <a class="nav-link" href="/home">KONTAKT</a>
+      <a class="nav-link" href="/home" data-i18n="nav.home">O MNE</a>
+      <a class="nav-link" href="./projects.html" data-i18n="nav.projects">PROJEKTY</a>
+      <a class="nav-link" href="/home" data-i18n="nav.upcoming">PRIPRAVOVANÉ</a>
+      <a class="nav-link" href="/home" data-i18n="nav.contact">KONTAKT</a>
 
-      <div class="language-selector">
+    <div class="language-selector">
       <select name="Language" id="cars">
         <option value="slovak">Slovak</option>
-        <!-- <option value="english">English</option> -->
+        <option value="english">English</option>
       </select>
     </div>
   </div>
 
 
-  <div class="background">Projekty</div>
+  <div class="background" data-i18n="common.title">Projekty</div>
 
 
   <section class="projects-section">
     <div class="header">
 
-      <h2>Moje projekty</h2>
+      <h2 data-i18n="common.my_projects">Moje projekty</h2>
 
       <div class="filters">
         <div class="selector">
           <select id="category-select" name="category" aria-label="Select category">
-            <option value="" disabled selected>Kategórie</option>
-            <option value="category">Všetky kategórie</option>
-            <option value="game">Hra</option>
-            <option value="educational">Náučná</option>
+            <option data-i18n="filters.categories.categories" value="" disabled selected >Kategórie</option>
+            <option data-i18n="filters.categories.all_categories" value="category">Všetky kategórie</option>
+            <option data-i18n="filters.categories.game" value="game">Hra</option>
+            <option data-i18n="filters.categories.educational" value="educational">Náučná</option>
           </select>
         </div>
 
         <div class="selector">
           <select id="type-select" name="theme" aria-label="Select theme">
-            <option value="" disabled selected>Typy</option>
-            <option value="type">Všetky typy</option>
-            <option value="desktop">Desktop</option>
-            <option value="cli">CLI</option>
-            <option value="web">Web</option>
+            <option data-i18n="filters.types.types" value="" disabled selected>Typy</option>
+            <option data-i18n="filters.types.all_types" value="type">Všetky typy</option>
+            <option data-i18n="filters.types.desktop" value="desktop">Desktop</option>
+            <option value="filters.types.cli">CLI</option>
+            <option value="filters.types.web">Web</option>
           </select>
         </div>
 
         <div class="selector">
           <select id="language-select" name="platform" aria-label="Select platform">
-            <option value="" disabled selected>Jazyky</option>
-            <option value="language">Všetky jazyky</option>
+            <option data-i18n="filters.languages.languages" value="" disabled selected>Jazyky</option>
+            <option data-i18n="filters.languages.all_languages" value="language">Všetky jazyky</option>
             <option value="java">Java</option>
             <option value="cpp">C++</option>
             <option value="bash">Bash</option>
@@ -93,17 +93,17 @@
 
       <div class="project language type category java game desktop">
         <div class="descriptions">
-          <h3>Dice</h3>
-          <p>Jednoduchý štatistický experiment v hádzaní kockami</p>
-          <a href="#" onclick="setUp('DIC')">Zisti viac</a>
+          <h3 data-i18n="projects.dice.title">Kocky</h3>
+          <p data-i18n="projects.dice.desc">Jednoduchý štatistický experiment súčtov hodu kociek.</p>
+          <a href="#" onclick="setUp('DIC')" data-i18n="projects.click">Zisti viac</a>
         </div>
         <img src="./assets/images/projects/dice/title.png" alt="Image 1"/>
       </div>
 
       <div class="project language type category java game desktop">
         <div class="descriptions">
-          <h3>Hangman</h3>
-          <p>Klasický hra obesenca implementovaná v GUI.</p>
+          <h3 data-i18n="projects.hangman.title">Hangman</h3>
+          <p data-i18n="projects.hangman.desc">Grafická implementácia tradičnej hry Obesenec.</p>
           <a href="#" onclick="setUp('HAN')">Zisti viac</a>
         </div>
         <img src="./assets/images/projects/hangman/title.png" alt="Image 1"/>
@@ -111,8 +111,8 @@
 
       <div class="project language type category java css html js educational web">
         <div class="descriptions">
-          <h3>Educational Software</h3>
-          <p>Wébová aplikácia určená ako podpora výučby predmetu Numerické metódy.</p>
+          <h3 data-i18n="projects.edu.title">Educational Software</h3>
+          <p data-i18n="projects.edu.desc">Wébová aplikácia určená ako podpora výučby predmetu Numerické metódy.</p>
           <a href="#" onclick="setUp('EDU')">Zisti viac</a>
         </div>
         <img src="./assets/images/projects/es/title.png" alt="Image 1"/>
@@ -120,8 +120,8 @@
 
       <div class="project language type category java game desktop">
         <div class="descriptions">
-          <h3>Life Is Weird</h3>
-          <p>Jednoduchá príbehová GUI aplikácia voľne inšpirovaná zážitkami z AAA hier Firewatch a Life Is Strange.</p>
+          <h3 data-i18n="projects.liw.title">Life Is Weird</h3>
+          <p data-i18n="projects.liw.desc">Jednoduchá príbehová GUI aplikácia voľne inšpirovaná zážitkami z AAA hier Firewatch a Life Is Strange.</p>
           <a href="#" onclick="setUp('LIW')">Zisti viac</a>
         </div>
         <img src="./assets/images/projects/liw/title.png" alt="Image 1"/>
@@ -129,14 +129,23 @@
 
       <div class="project language type category java css html js game web">
         <div class="descriptions">
-          <h3>Swan Protocol</h3>
-          <p></p>
+          <h3 data-i18n="projects.sp.title">Swan Protocol</h3>
+          <p data-i18n="projects.sp.desc">Jednoduchá webová aplikácia na motívy seriálu The Lost.</p>
           <a href="#" onclick="setUp('SPR')">Zisti viac</a>
         </div>
         <img src="./assets/images/projects/spr/title.png" alt="Image 1"/>
       </div>
 
+        <div class="project language type category java educational desktop">
+            <div class="descriptions">
+                <h3 data-i18n="projects.pcrio.title">PCRio</h3>
+                <p data-i18n="projects.pcrio.desc">Informačný systém na evidenciu pacientov a výsledkov PCR testovania.</p>
+                <a href="#" onclick="setUp('PCRio')">Zisti viac</a>
+            </div>
+            <img src="./assets/images/projects/pcr/title.png" alt="Image 1"/>
+        </div>
     </div>
+
   </section>
 
 
@@ -147,7 +156,7 @@
     </a>
 
     <a href="https://sk.linkedin.com/" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png" alt="linkedin" />
+      <img src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png" alt="linkedin"/>
     </a>
   </footer>
 
@@ -155,7 +164,7 @@
 
 
 
-  <script src="./action.js"></script>
+  <script type="module" src="./action.js"></script>
 </body>
 
 </html>
