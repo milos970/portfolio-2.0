@@ -42,11 +42,45 @@ export const sk = {
         },
     },
 
-    footer: {
-        copyright: "© 2025 All rights reserved"
+    // ====== PROJECTS PAGE ======
+    projects: {
+
+        LIW: {
+            title: "Life Is Weird",
+            desc: "Jednoduchá príbehová GUI aplikácia voľne inšpirovaná zážitkami z AAA hier Firewatch a Life Is Strange."
+        },
+
+        DIC: {
+            title: "Kocky",
+            desc: "Jednoduchý štatistický experiment súčtov hodu kociek."
+        },
+
+        HAN: {
+            title: "Obesenec",
+            desc: "Grafická implementácia tradičnej hry Obesenec."
+        },
+
+        SPR: {
+            title: "Swan Protocol",
+            desc: "Jednoduchá webová aplikácia na motívy seriálu The Lost."
+        },
+
+        PCRio: {
+            title: "PCRio",
+            desc: "Informačný systém na evidenciu pacientov a výsledkov PCR testovania."
+        },
+
+        EDU: {
+            title: "Educational Software",
+            desc: "Wébová aplikácia určená ako podpora výučby predmetu Numerické metódy."
+        },
+
+
     },
 
-    projects: {
+
+
+    projectsSK: {
         LIW: {
             "./assets/images/projects/liw/title.png": {
                 title: "Life Is Weird",

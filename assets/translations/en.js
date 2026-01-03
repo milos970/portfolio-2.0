@@ -46,12 +46,39 @@ export const en = {
 
     // ====== PROJECTS PAGE ======
     projects: {
-        title: "My Projects",
 
         LIW: {
             title: "Life Is Weird",
             desc: "A story-driven GUI application inspired by Firewatch and Life Is Strange."
-        }
+        },
+
+        DIC: {
+            title: "Dice",
+            desc: "A simple statistical experiment of summing dice rolls."
+        },
+
+        HAN: {
+            title: "Hangman",
+            desc: "Graphical implementation of the traditional game Hangman."
+        },
+
+        EDU: {
+            title: "Educational Software",
+            desc: "Web application designed to support the teaching of the course Numerical Methods."
+        },
+
+        SPR: {
+            title: "Swan Protocol",
+            desc: "A simple web application inspired by the TV series Lost."
+        },
+
+        PCRio: {
+            title: "PCRio",
+            desc: "Information system for managing patient records and PCR test results."
+        },
+
+
+
     },
 
     // ====== CONTACT PAGE ======
